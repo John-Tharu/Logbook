@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      src="https://kit.fontawesome.com/bb7a749298.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/" method="POST">
+        <div class="login">
+          <h1>LOGIN HERE</h1>
+          <div class="form">
+            <table border="1">
+              <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" /></td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>
+                  <input type="password" id="password" name="password" />
+                </td>
+                <i class="fa-regular fa-eye"></i>
+              </tr>
+            </table>
+          </div>
+          <div class="btn">
+            <a href="/register">Create new account</a>
+          </div>
+          <div class="btn">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      const passwordInput = document.getElementById("password");
+      const eyeIcon = document.querySelector(".fa-eye"); // For password
+
+      eyeIcon.addEventListener("click", () => {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        eyeIcon.classList.toggle("fa-eye");
+        eyeIcon.classList.toggle("fa-eye-slash");
+      });
+    </script>
+  </body>
+</html>

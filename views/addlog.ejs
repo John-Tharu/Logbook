@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Log Book</title>
+    <link rel="stylesheet" href="/addlog.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="log_page">
+        <h1>IT DEPARTMENT LOG BOOK</h1>
+        <div class="box">
+          <form action="" method="post">
+            <h1>User Information</h1>
+            <div class="tbl">
+              <table border="1">
+                <tr>
+                  <td style="width: 30%">User ID</td>
+                  <td>
+                    <select name="userid" id="userid">
+                      <option value="123">123</option>
+                      <option value="456">456</option>
+                      <option value="789">789</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td><input type="text" name="name" id="name" /></td>
+                </tr>
+                <tr>
+                  <td>Designation</td>
+                  <td>
+                    <input type="text" name="designation" id="designation" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Time</td>
+                  <td><input type="time" name="time" id="time" /></td>
+                </tr>
+              </table>
+            </div>
+            <h1>Today's Activities</h1>
+            <div>
+              <textarea
+                id="listArea"
+                name="activities"
+                id="activities"
+                cols="30"
+                rows="12"
+              ></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit" class="btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const textarea = document.getElementById("listArea");
+
+      // Start with 1. by default
+      textarea.value = "1. ";
+
+      textarea.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+
+          const lines = textarea.value.split("\n");
+          const lastLine = lines[lines.length - 1];
+
+          const match = lastLine.match(/^(\d+)\.\s/);
+          const nextNumber = match ? Number(match[1]) + 1 : 1;
+
+          textarea.value += `\n${nextNumber}. `;
+        }
+      });
+    </script>
+  </body>
+</html>

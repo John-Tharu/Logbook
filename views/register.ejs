@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily log Book</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      src="https://kit.fontawesome.com/bb7a749298.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/register" method="POST">
+        <div class="login">
+          <h1>REGISTER HERE</h1>
+          <div class="form">
+            <table border="1">
+              <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" /></td>
+              </tr>
+              <tr></tr>
+              <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" /></td>
+              </tr>
+              <tr>
+                <td>Designation</td>
+                <td>
+                  <select name="designation" id="designation">
+                    <option value="">--- Select ---</option>
+                    <option value="IT Technician">IT Technician</option>
+                    <option value="IT - Intern">IT - Intern</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>
+                  <input type="password" id="password" name="password" />
+                </td>
+              </tr>
+              <tr>
+                <td>Confirm Password</td>
+                <td>
+                  <input type="password" id="cpassword" name="cpassword" />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="btn">
+            <a href="/">Already have an account</a>
+          </div>
+          <div class="btn">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
