@@ -1,5 +1,5 @@
 export const index = (req, res) => {
-  res.render("index");
+  res.render("index", { msg: req.flash("msg") });
 };
 
 export const homepage = (req, res) => {
@@ -11,5 +11,5 @@ export const addlog = (req, res) => {
 };
 
 export const register = (req, res) => {
-  res.render("register");
+  res.render("register", { msg: req.flash("msg") });
 };

@@ -15,6 +15,9 @@
       <form action="/" method="POST">
         <div class="login">
           <h1>LOGIN HERE</h1>
+          <% if(msg && msg.length > 0){ %>
+          <p class="error"><%= msg %></p>
+          <% } %>
           <div class="form">
             <table border="1">
               <tr>
